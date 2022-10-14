@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="421.0" prefWidth="699.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.uniquindio.programacion3.preparcial1.controller.GestionEstudianteController">
+   <children>
+      <TableView fx:id="tableviewEstudiantes" layoutX="326.0" layoutY="121.0" prefHeight="203.0" prefWidth="367.0" style="-fx-border-color: #79F67E;">
+        <columns>
+          <TableColumn fx:id="columNombre" prefWidth="75.0" text="Nombre" />
+          <TableColumn fx:id="columCodigo" prefWidth="75.0" text="Codigo" />
+            <TableColumn fx:id="columNota1" prefWidth="75.0" text="Nota 1" />
+            <TableColumn fx:id="columNota2" prefWidth="75.0" text="Nota 2" />
+            <TableColumn fx:id="columNota3" prefWidth="75.0" text="Nota 3" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </TableView>
+      <TextField fx:id="txtNombre" layoutX="30.0" layoutY="147.0" prefHeight="25.0" prefWidth="234.0" promptText="Nombre" style="-fx-border-color: #79F67E;" />
+      <TextField fx:id="txtCodigo" layoutX="30.0" layoutY="184.0" prefHeight="25.0" prefWidth="234.0" promptText="Codigo" style="-fx-border-color: #79F67E;" />
+      <TextField fx:id="txtNota1" layoutX="30.0" layoutY="221.0" prefHeight="25.0" prefWidth="234.0" promptText="Nota 1" style="-fx-border-color: #79F67E;" />
+      <Button fx:id="btnLimpiar" layoutX="449.0" layoutY="336.0" mnemonicParsing="false" onAction="#limpiarEstudiante" style="-fx-background-color: #fff587;" text="Limpiar">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnEliminar" layoutX="613.0" layoutY="337.0" mnemonicParsing="false" onAction="#eliminarEstudiante" style="-fx-background-color: #fc7c7c;" text="Eliminar">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnAgregar" layoutX="531.0" layoutY="337.0" mnemonicParsing="false" onAction="#agregarEstudiante" style="-fx-background-color: #7ccbfc;" text="Agregar">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Label layoutX="8.0" layoutY="100.0" text="Por favor digite la siguiente información:">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="167.0" layoutY="15.0" text="Gestión estudiante" textFill="#96da38">
+         <font>
+            <Font name="System Bold Italic" size="44.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtNota2" layoutX="30.0" layoutY="258.0" prefHeight="25.0" prefWidth="234.0" promptText="Nota 2" style="-fx-border-color: #79F67E;" />
+      <TextField fx:id="txtNota3" layoutX="30.0" layoutY="294.0" prefHeight="25.0" prefWidth="234.0" promptText="Nota 3" style="-fx-border-color: #79F67E;" />
+      <TextField fx:id="txtBuscarEstudiante" layoutX="30.0" layoutY="375.0" prefHeight="25.0" prefWidth="234.0" promptText="Buscar estudiante por su codigo" style="-fx-border-color: #79F67E;" />
+      <Button fx:id="btnBuscar" layoutX="283.0" layoutY="376.0" mnemonicParsing="false" onAction="#buscarEstudiante" style="-fx-background-color: #FCC57C;" text="Buscar">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnActualizar" layoutX="352.0" layoutY="335.0" mnemonicParsing="false" onAction="#actualizarEstudiante" style="-fx-background-color: #C3FF87;" text="Actualizar">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="117.0" fitWidth="175.0" layoutX="593.0" layoutY="363.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/rayas.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="117.0" fitWidth="175.0" layoutX="-20.0" layoutY="-17.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/rayas.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
