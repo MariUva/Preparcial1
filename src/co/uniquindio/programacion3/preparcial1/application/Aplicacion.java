@@ -68,8 +68,8 @@ public class Aplicacion extends Application {
 
 	// ----------------------------ESTUDIANTES----------------------------------
 
-	public Estudiante crearEstudiante(String nombre, String codigo, double notas) {
-		Estudiante estudiantes = modelFactoryController.agregarEstudiante(nombre, codigo, notas);
+	public Estudiante crearEstudiante(String nombre, String codigo, double nota1, double nota2, double nota3) {
+		Estudiante estudiantes = modelFactoryController.agregarEstudiante(nombre, codigo, nota1, nota2, nota3);
 		return estudiantes;
 
 	}

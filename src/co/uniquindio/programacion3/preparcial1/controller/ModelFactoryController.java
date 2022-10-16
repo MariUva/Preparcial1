@@ -29,20 +29,6 @@ public class ModelFactoryController {
 
 	public ModelFactoryController() {
 
-		// 1. inicializar datos y luego guardarlo en archivos
-		// iniciarSalvarDatosPrueba();
-
-		// 2. Cargar los datos de los archivos
-		// cargarDatosDesdeArchivos();
-
-		// 3. Guardar y Cargar el recurso serializable binario
-		// guardarResourceBinario();
-		// cargarResourceBinario();
-
-		// 4. Guardar y Cargar el recurso serializable XML
-		// guardarResourceXML();
-
-		// Siempre se debe verificar si la raiz del recurso es null
 		if (colegio == null) {
 			System.out.println("Inicializa");
 			inicializarDatos();
@@ -58,9 +44,9 @@ public class ModelFactoryController {
 		Estudiante estudiante = new Estudiante();
 		estudiante.setNombre("Juan");
 		estudiante.setCodigo("12345");
-		estudiante.setNotas(2.0);
-		estudiante.setNotas(5.0);
-		estudiante.setNotas(4.5);
+		estudiante.setNota1(2.0);
+		estudiante.setNota2(5.0);
+		estudiante.setNota3(4.5);
 
 		colegio.getListaEstudiantes().add(estudiante);
 		getListaEstudiante().add(estudiante);
@@ -94,14 +80,16 @@ public class ModelFactoryController {
 
 	// ---------------------ESTUDIANTE---------------------------------
 
-	public Estudiante agregarEstudiante(String nombre, String codigo, double notas) {
+	public Estudiante agregarEstudiante(String nombre, String codigo, double nota1, double nota2, double nota3) {
 		if (existeEstudiante(codigo)) {
 			return null;
 		} else {
 			Estudiante nuevoEstudiante = new Estudiante();
 			nuevoEstudiante.setNombre(nombre);
 			nuevoEstudiante.setCodigo(codigo);
-			nuevoEstudiante.setNotas(notas);
+			nuevoEstudiante.setNota1(nota1);
+			nuevoEstudiante.setNota2(nota2);
+			nuevoEstudiante.setNota3(nota3);
 			getListaEstudiante().add(nuevoEstudiante);
 			return nuevoEstudiante;
 		}

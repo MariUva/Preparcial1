@@ -4,26 +4,30 @@ public class Estudiante {
 
 	private String nombre;
 	private String codigo;
-	private double notas;
+	private double nota1;
+	private double nota2;
+	private double nota3;
 
 	// Metodo contructor
-	public Estudiante(String nombre, String codigo, double notas) {
+	public Estudiante(String nombre, String codigo, double nota1, double nota2, double nota3) {
 		super();
 		this.nombre = nombre;
 		this.codigo = codigo;
-		this.notas = notas;
+		this.nota1 = nota1;
+		this.nota2 = nota2;
+		this.nota3 = nota3;
 	}
 
-	//Metodo constructor vacio
+	// Metodo constructor vacio
 	public Estudiante() {
 		super();
 	}
 
-
 	// Metodo toString
 	@Override
 	public String toString() {
-		return "Estudiante [nombre=" + nombre + ", codigo=" + codigo + ", notas=" + notas + "]";
+		return "Estudiante [nombre=" + nombre + ", codigo=" + codigo + ", nota1=" + nota1 + ", nota2=" + nota2
+				+ ", nota3=" + nota3 + "]";
 	}
 
 	// Metodos getters and setters
@@ -43,12 +47,28 @@ public class Estudiante {
 		this.codigo = codigo;
 	}
 
-	public double getNotas() {
-		return notas;
+	public double getNota1() {
+		return nota1;
 	}
 
-	public void setNotas(double notas) {
-		this.notas = notas;
+	public void setNota1(double nota1) {
+		this.nota1 = nota1;
+	}
+
+	public double getNota2() {
+		return nota2;
+	}
+
+	public void setNota2(double nota2) {
+		this.nota2 = nota2;
+	}
+
+	public double getNota3() {
+		return nota3;
+	}
+
+	public void setNota3(double nota3) {
+		this.nota3 = nota3;
 	}
 
 }

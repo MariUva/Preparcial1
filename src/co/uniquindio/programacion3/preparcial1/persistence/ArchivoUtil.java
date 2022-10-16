@@ -116,7 +116,7 @@ public class ArchivoUtil {
 
 
 
-	// ------------------------------------SERIALIZACIï¿½N y XML
+	// ------------------------------------SERIALIZACIÓN y XML----------
 	/**
 	 * Escribe en el fichero que se le pasa el objeto que se le envia
 	 *

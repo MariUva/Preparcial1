@@ -92,23 +92,32 @@ public class GestionEstudianteController {
 		txtNota3.clear();
 		txtBuscarEstudiante.clear();
 
+		txtCodigo.setDisable(false);
+
 	}
 
+	/*
+	 * Metodo que permite actualizar un estudiante
+	 */
 	@FXML
 	private void actualizarEstudiante(ActionEvent event) {
 
 		String nombre = txtNombre.getText();
 		String codigo = txtCodigo.getText();
-		String notas = txtNota1.getText();
+		String nota1 = txtNota1.getText();
+		String nota2 = txtNota2.getText();
+		String nota3 = txtNota3.getText();
 
 		if (estudianteSeleccion != null) {
 
-			if (datosValidos(nombre, codigo, notas)) {
+			if (datosValidos(nombre, codigo, nota1, nota2, nota3)) {
 				// aplicacion.actualizarEstudiante(nombre, codigo, notas);
 
 				estudianteSeleccion.setNombre(nombre);
 				estudianteSeleccion.setCodigo(codigo);
 				// estudianteSeleccion.setNotas(notas);
+
+				double notasAux = notasADouble(nota1, nota2, nota3);
 
 				tableviewEstudiantes.refresh();
 				mostrarMensaje("Información", "Actualizar", "El estudiante ha sido actualizado.",
@@ -132,14 +141,14 @@ public class GestionEstudianteController {
 
 		String nombre = txtNombre.getText();
 		String codigo = txtCodigo.getText();
-		String notas = this.txtNota1.getText();
+		String nota1 = this.txtNota1.getText();
 
-		// String notas = this.txtNota2.getText();
-		// String notas = this.txtNota3.getText();
+		String nota2 = this.txtNota2.getText();
+		String nota3 = this.txtNota3.getText();
 
 		try {
-			if (datosValidos(nombre, codigo, notas)) {
-				crearEstudiante(nombre, codigo, notas);
+			if (datosValidos(nombre, codigo, nota1, nota2, nota3)) {
+				crearEstudiante(nombre, codigo, nota1, nota2, nota3);
 				actualizarTabla();
 			}
 		} catch (Exception ignored) {
@@ -147,13 +156,16 @@ public class GestionEstudianteController {
 		}
 	}
 
-	private double notasADouble(String notas) {
+	private double notasADouble(String nota1, String nota2, String nota3) {
 		double notasAux = 0;
 		try {
-			notasAux = Double.parseDouble(notas);
+			notasAux = Double.parseDouble(nota1);
+			notasAux = Double.parseDouble(nota2);
+			notasAux = Double.parseDouble(nota3);
+
 		} catch (Exception e) {
-			mostrarMensaje("Advertencia", "Informaciï¿½n del empleado es invalida",
-					"Ingrese un valor numerico en el sueldo", AlertType.WARNING);
+			mostrarMensaje("Advertencia", "Información del empleado es invalida",
+					"Ingrese un valor numerico en el campo de notas", AlertType.WARNING);
 		}
 		return notasAux;
 
@@ -162,17 +174,17 @@ public class GestionEstudianteController {
 	/*
 	 * Metodo para crear un estudiante
 	 */
-	private void crearEstudiante(String nombre, String codigo, String notas) {
+	private void crearEstudiante(String nombre, String codigo, String nota1, String nota2, String nota3) {
 
-		double notasAux = notasADouble(notas);
-		Estudiante estudiante = aplicacion.crearEstudiante(nombre, codigo, notasAux);
+		double notasAux = notasADouble(nota1, nota2, nota3);
+		Estudiante estudiante = aplicacion.crearEstudiante(nombre, codigo, notasAux, notasAux, notasAux);
 
 		// Notificar que el estudiante fue creado
 
 		if (estudiante != null) {
 			listadoEstudiantes.add(0, estudiante);
 			listadoEstudiantes.add(estudiante);
-			mostrarMensaje("Notificaciï¿½n estudiante", "Estudiante guardado",
+			mostrarMensaje("Notificación estudiante", "Estudiante guardado",
 					"El estudiante " + estudiante.getNombre() + " ha sido guardado", AlertType.INFORMATION);
 
 		} else {
@@ -214,30 +226,54 @@ public class GestionEstudianteController {
 	 * Metodo que permite verificar si todos los campos han sido dilingeciados
 	 */
 
-	private boolean datosValidos(String nombre, String codigo, String notas) {
+	private boolean datosValidos(String nombre, String codigo, String nota1, String nota2, String nota3) {
 
 		boolean flag = true;
 		String notificacion = "";
 
 		if (nombre == null || nombre.equals("")) {
-			notificacion += "Nombre no tiene informaciï¿½n\n";
+			notificacion += "Nombre no tiene información\n";
 
 		}
 		if (codigo == null || codigo.equals("")) {
-			notificacion += "Codigo no tiene informaciï¿½n\n";
+			notificacion += "Codigo no tiene información\n";
 
 		}
 
-		if (notas.equals("")) {
+		if (nota1.equals("")) {
 			flag = false;
-			notificacion += "Sueldo no tiene informaciï¿½n\n";
+			notificacion += "La nota 1 no tiene información\n";
 
 		}
 		if (flag) {
 			try {
-				double notasAux = Double.parseDouble(notas);
+				double notasAux1 = Double.parseDouble(nota1);
 			} catch (Exception e) {
-				notificacion += "Las notas deben contener valores numericos";
+				notificacion += "Las nota 1 deben contener valores numericos";
+			}
+		}
+
+		if (nota2.equals("")) {
+			flag = false;
+			notificacion += "La nota 2 no tiene información\n";
+		}
+		if (flag) {
+			try {
+				double notasAux2 = Double.parseDouble(nota2);
+			} catch (Exception e) {
+				notificacion += "La nota 2 deben contener valores numericos";
+			}
+		}
+
+		if (nota3.equals("")) {
+			flag = false;
+			notificacion += "La nota 3 no tiene información\n";
+		}
+		if (flag) {
+			try {
+				double notasAux3 = Double.parseDouble(nota3);
+			} catch (Exception e) {
+				notificacion += "La nota 3 deben contener valores numericos";
 			}
 		}
 
@@ -246,7 +282,7 @@ public class GestionEstudianteController {
 
 		}
 
-		mostrarMensaje("Advertencia", "Informaciï¿½n del empleado invalida", notificacion, AlertType.WARNING);
+		mostrarMensaje("Advertencia", "Información del empleado invalida", notificacion, AlertType.WARNING);
 		return false;
 	}
 
@@ -255,12 +291,12 @@ public class GestionEstudianteController {
 
 		if (estudianteSeleccion != null) {
 			if (aplicacion.eliminarEstudiantes(estudianteSeleccion.getCodigo())) {
-				mostrarMensaje("Informaciï¿½n", "Estudiante  eliminado", "El estudiante ha sido eliminado",
+				mostrarMensaje("Información", "Estudiante  eliminado", "El estudiante ha sido eliminado",
 						AlertType.ERROR);
 
 			} else {
 
-				mostrarMensaje("Informaciï¿½n", "Estudiante selecciï¿½n",
+				mostrarMensaje("Información", "Estudiante selecciï¿½n",
 						"No se ha realizado la selecciï¿½n de un estudiante", AlertType.INFORMATION);
 
 			}
@@ -269,7 +305,7 @@ public class GestionEstudianteController {
 
 		} else {
 
-			mostrarMensaje("Advertencia", "Estudiante selecciï¿½n", "No se ha realizado la seleccion de un estudiante",
+			mostrarMensaje("Advertencia", "Estudiante selección", "No se ha realizado la seleccion de un estudiante",
 					AlertType.ERROR);
 
 		}
@@ -288,7 +324,9 @@ public class GestionEstudianteController {
 
 			txtNombre.setText(estudianteSeleccion.getNombre());
 			txtCodigo.setText(estudianteSeleccion.getCodigo());
-			txtNota1.setText(estudianteSeleccion.getNotas() + "");
+			txtNota1.setText(estudianteSeleccion.getNota1() + "");
+			txtNota2.setText(estudianteSeleccion.getNota2() + "");
+			txtNota3.setText(estudianteSeleccion.getNota3() + "");
 
 		}
 
@@ -314,7 +352,9 @@ public class GestionEstudianteController {
 
 		this.columNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
 		this.columCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
-		this.columNota1.setCellValueFactory(new PropertyValueFactory<>("notas"));
+		this.columNota1.setCellValueFactory(new PropertyValueFactory<>("nota1"));
+		this.columNota2.setCellValueFactory(new PropertyValueFactory<>("nota2"));
+		this.columNota3.setCellValueFactory(new PropertyValueFactory<>("nota3"));
 
 		tableviewEstudiantes.getSelectionModel().selectedItemProperty()
 				.addListener((obs, olSelection, newSelection) -> {

@@ -1,4 +1,3 @@
-
 package co.uniquindio.programacion3.preparcial1.persistence;
 
 import java.io.FileNotFoundException;
@@ -39,12 +38,12 @@ public class Persistencia {
 		String contenido = "";
 
 		for (Estudiante estudiante : listaEstudiantes) {
-			contenido += estudiante.getNombre() + "," + estudiante.getCodigo() + "," + estudiante.getNotas() + "\n";
+			contenido += estudiante.getNombre() + "," + estudiante.getCodigo() + "," + estudiante.getNota1() + ","
+					+ estudiante.getNota2() + "," + estudiante.getNota3() + "\n";
 
 		}
 		ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_ESTUDIANTES, contenido, false);
 	}
-
 
 	// ----------------------LOADS------------------------
 
@@ -71,13 +70,14 @@ public class Persistencia {
 			Estudiante estudiante = new Estudiante();
 			estudiante.setNombre(linea.split(",")[0]);
 			estudiante.setCodigo(linea.split(",")[1]);
-			estudiante.setNotas(Double.parseDouble(linea.split(",")[2]));
+			estudiante.setNota1(Double.parseDouble(linea.split(",")[2]));
+			estudiante.setNota2(Double.parseDouble(linea.split(",")[3]));
+			estudiante.setNota3(Double.parseDouble(linea.split(",")[4]));
 			estudiantes.add(estudiante);
 
 		}
 		return estudiantes;
 	}
-
 
 	// ----------------------SAVES------------------------
 
@@ -95,8 +95,8 @@ public class Persistencia {
 
 		for (Estudiante estudianteAux : listaEstudiantes) {
 
-			contenido += estudianteAux.getNombre() + "," + estudianteAux.getCodigo() + "," + estudianteAux.getNotas()
-					+ "\n";
+			contenido += estudianteAux.getNombre() + "," + estudianteAux.getCodigo() + "," + estudianteAux.getNota1()
+					+ "," + estudianteAux.getNota2() + "," + estudianteAux.getNota3() + "\n";
 		}
 		ArchivoUtil.guardarArchivo(ruta, contenido, true);
 	}
