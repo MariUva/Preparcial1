@@ -25,7 +25,6 @@
       </TableView>
       <TextField fx:id="txtNombre" layoutX="30.0" layoutY="160.0" prefHeight="25.0" prefWidth="234.0" promptText="Nombre" style="-fx-border-color: #79F67E;" />
       <TextField fx:id="txtCodigo" layoutX="30.0" layoutY="214.0" prefHeight="25.0" prefWidth="234.0" promptText="Codigo" style="-fx-border-color: #79F67E;" />
-      <TextField fx:id="txtModalidad" layoutX="30.0" layoutY="272.0" prefHeight="25.0" prefWidth="234.0" promptText="Modalidad" style="-fx-border-color: #79F67E;" />
       <Button fx:id="btnLimpiar" layoutX="449.0" layoutY="336.0" mnemonicParsing="false" onAction="#limpiarProgramas" style="-fx-background-color: #fff587;" text="Limpiar">
          <font>
             <Font name="System Bold" size="12.0" />
@@ -72,5 +71,6 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
+      <ComboBox fx:id="cmbModalidad" layoutX="29.0" layoutY="275.0" prefHeight="25.0" prefWidth="234.0" promptText="Modalidad" style="-fx-border-color: #79F67E;" />
    </children>
 </AnchorPane>

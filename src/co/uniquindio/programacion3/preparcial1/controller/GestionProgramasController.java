@@ -1,9 +1,11 @@
 package co.uniquindio.programacion3.preparcial1.controller;
 
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
+import java.util.Properties;
 import java.util.ResourceBundle;
-
 
 import co.uniquindio.programacion3.preparcial1.application.Aplicacion;
 import co.uniquindio.programacion3.preparcial1.modell.Programas;
@@ -14,6 +16,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -56,7 +59,7 @@ public class GestionProgramasController {
 	private Button btnAtras;
 
 	@FXML
-	private TextField txtModalidad;
+	private ComboBox<String> cmbModalidad;
 
 	@FXML
 	private TableColumn<String, Programas> columModalidad;
@@ -81,7 +84,7 @@ public class GestionProgramasController {
 
 		txtNombre.clear();
 		txtCodigo.clear();
-		txtModalidad.clear();
+		cmbModalidad.setValue("");
 
 		txtCodigo.setDisable(false);
 
@@ -95,7 +98,7 @@ public class GestionProgramasController {
 
 		String nombre = txtNombre.getText();
 		String codigo = txtCodigo.getText();
-		String modalidad = txtModalidad.getText();
+		String modalidad = cmbModalidad.getValue();
 
 		if (programasSeleccion != null) {
 
@@ -125,7 +128,7 @@ public class GestionProgramasController {
 
 		String nombre = txtNombre.getText();
 		String codigo = txtCodigo.getText();
-		String modalidad = txtModalidad.getText();
+		String modalidad = cmbModalidad.getValue();
 
 		try {
 			if (datosValidos(nombre, codigo, modalidad)) {
@@ -144,7 +147,8 @@ public class GestionProgramasController {
 	private void crearPrograma(String nombre, String codigo, String modalidad) throws IOException {
 
 		Programas programa = aplicacion.crearProgramas(nombre, codigo, modalidad);
-		//Programas programa = aplicacion.crearProgramas(nombre, codigo, Persistencia.obtenerNombreProperties());
+		// Programas programa = aplicacion.crearProgramas(nombre, codigo,
+		// Persistencia.obtenerNombreProperties());
 
 		// Notificar que el programa fue creado
 		if (programa != null) {
@@ -273,50 +277,67 @@ public class GestionProgramasController {
 
 	// ---------------------TABLA-------------------------
 
-		ObservableList<Programas> listadoProgramas = FXCollections.observableArrayList();
-		ObservableList<Programas> listaBuscarProgramas = FXCollections.observableArrayList();
+	ObservableList<Programas> listadoProgramas = FXCollections.observableArrayList();
+	ObservableList<Programas> listaBuscarProgramas = FXCollections.observableArrayList();
 
-		private Programas programasSeleccion;
+	private Programas programasSeleccion;
 
-		private void mostrarInformacion() {
+	private void mostrarInformacion() {
 
-			if (programasSeleccion != null) {
+		if (programasSeleccion != null) {
 
-				txtNombre.setText(programasSeleccion.getNombre());
-				txtCodigo.setText(programasSeleccion.getCodigo());
-				txtModalidad.setText(programasSeleccion.getModalidad());
+			txtNombre.setText(programasSeleccion.getNombre());
+			txtCodigo.setText(programasSeleccion.getCodigo());
+			cmbModalidad.setValue(programasSeleccion.getModalidad());
 
-				txtCodigo.setDisable(true);
+			txtCodigo.setDisable(true);
+		}
+
+	}
+
+	public void actualizarTabla() {
+
+		tableviewProgramas.getItems().clear();
+		listadoProgramas.clear();
+		listadoProgramas.addAll(modelFactoryController.getListaProgramas());
+		// tableviewProgramas.getItems().addAll(listadoProgramas);
+		tableviewProgramas.refresh();
+	}
+
+	@FXML
+	void initialize() {
+
+		this.columNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
+		this.columCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
+		this.columModalidad.setCellValueFactory(new PropertyValueFactory<>("modalidad"));
+
+		tableviewProgramas.getSelectionModel().selectedItemProperty().addListener((obs, olSelection, newSelection) -> {
+
+			if (newSelection != null) {
+				programasSeleccion = newSelection;
+				mostrarInformacion();
 			}
 
-		}
+		});
 
-		public void actualizarTabla() {
+		cmbModalidad.getItems().addAll(cargarPropiedades());
+	}
 
-			tableviewProgramas.getItems().clear();
-			listadoProgramas.clear();
-			listadoProgramas.addAll(modelFactoryController.getListaProgramas());
-		//	tableviewProgramas.getItems().addAll(listadoProgramas);
-			tableviewProgramas.refresh();
-		}
-
-		@FXML
-		void initialize() {
-
-			this.columNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
-			this.columCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
-			this.columModalidad.setCellValueFactory(new PropertyValueFactory<>("modalidad"));
-
-			tableviewProgramas.getSelectionModel().selectedItemProperty().addListener((obs, olSelection, newSelection) -> {
-
-				if (newSelection != null) {
-					programasSeleccion = newSelection;
-					mostrarInformacion();
-				}
-
-			});
+	private String[] cargarPropiedades(){
+	 String[] propiedades = new String[2];
+	Properties properties = new Properties();
+	InputStream entrada;
+	try{
+		entrada = new FileInputStream("src/resources/modalidad_dis_pre.properties");
+			properties. load (entrada);
+		propiedades[0] = properties.getProperty ("modalidad1");
+		propiedades[1] = properties.getProperty ("modalidad2");
+	}catch (Exception e) {
+			throw new RuntimeException(e);
 
 		}
+		return propiedades;
+	}
 
 		public void setAplicacion(Aplicacion aplicacion) {
 
