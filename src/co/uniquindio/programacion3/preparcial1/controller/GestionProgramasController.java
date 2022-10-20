@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import javax.swing.JOptionPane;
 
 import co.uniquindio.programacion3.preparcial1.application.Aplicacion;
 import co.uniquindio.programacion3.preparcial1.modell.Programas;
@@ -130,7 +129,7 @@ public class GestionProgramasController {
 
 		try {
 			if (datosValidos(nombre, codigo, modalidad)) {
-				crearPrograma(nombre, codigo);
+				crearPrograma(nombre, codigo, modalidad);
 				actualizarTabla();
 			}
 		} catch (Exception ignored) {
@@ -142,9 +141,10 @@ public class GestionProgramasController {
 	/*
 	 * Metodo para crear un programa
 	 */
-	private void crearPrograma(String nombre, String codigo) throws IOException {
+	private void crearPrograma(String nombre, String codigo, String modalidad) throws IOException {
 
-		Programas programa = aplicacion.crearProgramas(nombre, codigo, Persistencia.obtenerNombreProperties());
+		Programas programa = aplicacion.crearProgramas(nombre, codigo, modalidad);
+		//Programas programa = aplicacion.crearProgramas(nombre, codigo, Persistencia.obtenerNombreProperties());
 
 		// Notificar que el programa fue creado
 		if (programa != null) {
@@ -273,69 +273,68 @@ public class GestionProgramasController {
 
 	// ---------------------TABLA-------------------------
 
-	ObservableList<Programas> listadoProgramas = FXCollections.observableArrayList();
-	ObservableList<Programas> listaBuscarProgramas = FXCollections.observableArrayList();
+		ObservableList<Programas> listadoProgramas = FXCollections.observableArrayList();
+		ObservableList<Programas> listaBuscarProgramas = FXCollections.observableArrayList();
 
-	private Programas programasSeleccion;
+		private Programas programasSeleccion;
 
-	private void mostrarInformacion() {
+		private void mostrarInformacion() {
 
-		if (programasSeleccion != null) {
+			if (programasSeleccion != null) {
 
-			txtNombre.setText(programasSeleccion.getNombre());
-			txtCodigo.setText(programasSeleccion.getCodigo());
-			txtModalidad.setText(programasSeleccion.getModalidad());
+				txtNombre.setText(programasSeleccion.getNombre());
+				txtCodigo.setText(programasSeleccion.getCodigo());
+				txtModalidad.setText(programasSeleccion.getModalidad());
 
-			txtCodigo.setDisable(true);
+				txtCodigo.setDisable(true);
+			}
+
+		}
+
+		public void actualizarTabla() {
+
+			tableviewProgramas.getItems().clear();
+			listadoProgramas.clear();
+			listadoProgramas.addAll(modelFactoryController.getListaProgramas());
+		//	tableviewProgramas.getItems().addAll(listadoProgramas);
+			tableviewProgramas.refresh();
+		}
+
+		@FXML
+		void initialize() {
+
+			this.columNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
+			this.columCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
+			this.columModalidad.setCellValueFactory(new PropertyValueFactory<>("modalidad"));
+
+			tableviewProgramas.getSelectionModel().selectedItemProperty().addListener((obs, olSelection, newSelection) -> {
+
+				if (newSelection != null) {
+					programasSeleccion = newSelection;
+					mostrarInformacion();
+				}
+
+			});
+
+		}
+
+		public void setAplicacion(Aplicacion aplicacion) {
+
+			this.aplicacion = aplicacion;
+			this.modelFactoryController = aplicacion.getModelFactoryController();
+
+			tableviewProgramas.getItems().clear();
+			tableviewProgramas.setItems(getProgramas());
+
+		}
+
+		private ObservableList<Programas> getProgramas() {
+			listadoProgramas.addAll(modelFactoryController.getListaProgramas());
+			return listadoProgramas;
+		}
+
+		public void setAplicacion(ModelFactoryController modelFactoryControlleR) {
+
 		}
 
 	}
-
-	public void actualizarTabla() {
-
-		tableviewProgramas.getItems().clear();
-		listadoProgramas.clear();
-
-		listadoProgramas.addAll(modelFactoryController.getListaProgramas());
-		tableviewProgramas.getItems().addAll(listadoProgramas);
-		tableviewProgramas.refresh();
-	}
-
-	@FXML
-	void initialize() {
-
-		this.columNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
-		this.columCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
-		this.columModalidad.setCellValueFactory(new PropertyValueFactory<>("modalidad"));
-
-		tableviewProgramas.getSelectionModel().selectedItemProperty().addListener((obs, olSelection, newSelection) -> {
-
-			if (newSelection != null) {
-				programasSeleccion = newSelection;
-				mostrarInformacion();
-			}
-
-		});
-
-	}
-
-	public void setAplicacion(Aplicacion aplicacion) {
-
-		this.aplicacion = aplicacion;
-		this.modelFactoryController = aplicacion.getModelFactoryController();
-
-		tableviewProgramas.getItems().clear();
-		tableviewProgramas.setItems(getProgramas());
-
-	}
-
-	private ObservableList<Programas> getProgramas() {
-		listadoProgramas.addAll(modelFactoryController.getListaProgramas());
-		return listadoProgramas;
-	}
-
-	public void setAplicacion(ModelFactoryController modelFactoryControlleR) {
-
-	}
-
-}

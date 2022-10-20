@@ -4,11 +4,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import javax.swing.JOptionPane;
-
 import co.uniquindio.programacion3.preparcial1.application.Aplicacion;
 import co.uniquindio.programacion3.preparcial1.modell.Estudiante;
-import co.uniquindio.programacion3.preparcial1.modell.Universidad;
 import co.uniquindio.programacion3.preparcial1.persistence.Persistencia;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -161,7 +158,9 @@ public class GestionEstudianteController {
 
 				modelFactoryController.agregarEstudiante(nombre, codigo, Double.parseDouble(nota1),
 						Double.parseDouble(nota2), Double.parseDouble(nota3));
+
 				actualizarTabla();
+				// tableviewEstudiantes.refresh();
 
 			}
 		} catch (Exception ignored) {
@@ -194,6 +193,7 @@ public class GestionEstudianteController {
 			throws IOException {
 
 		double notasAux = notasADouble(nota1, nota2, nota3);
+
 		Estudiante estudiante = aplicacion.crearEstudiante(nombre, codigo, notasAux, notasAux, notasAux);
 
 		// Notificar que el estudiante fue creado
@@ -388,7 +388,7 @@ public class GestionEstudianteController {
 		tableviewEstudiantes.getItems().clear();
 		listadoEstudiantes.clear();
 		listadoEstudiantes.addAll(modelFactoryController.getListaEstudiante());
-		tableviewEstudiantes.getItems().addAll(listadoEstudiantes);
+	//	tableviewEstudiantes.getItems().addAll(listadoEstudiantes);
 		tableviewEstudiantes.refresh();
 	}
 
@@ -400,7 +400,6 @@ public class GestionEstudianteController {
 		this.columNota1.setCellValueFactory(new PropertyValueFactory<>("nota1"));
 		this.columNota2.setCellValueFactory(new PropertyValueFactory<>("nota2"));
 		this.columNota3.setCellValueFactory(new PropertyValueFactory<>("nota3"));
-
 		tableviewEstudiantes.getSelectionModel().selectedItemProperty()
 				.addListener((obs, olSelection, newSelection) -> {
 

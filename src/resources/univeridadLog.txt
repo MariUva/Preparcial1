@@ -138,3 +138,131 @@ oct 19, 2022 11:39:45 PM co.uniquindio.programacion3.preparcial1.persistence.Arc
 INFORMACIÓN: Acción crear,Se creo un estudiante,2022-10-19
 oct 19, 2022 11:39:51 PM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
 INFORMACIÓN: Acción crear,Se creo un estudiante,2022-10-19
+oct 19, 2022 11:55:20 PM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción ingresar,Se ingreso a estudiantes,2022-10-19
+oct 19, 2022 11:55:30 PM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción crear,Se creo un estudiante,2022-10-19
+oct 19, 2022 11:58:19 PM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción ingresar,Se ingreso a estudiantes,2022-10-19
+oct 19, 2022 11:58:25 PM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción crear,Se creo un estudiante,2022-10-19
+oct 19, 2022 11:58:28 PM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción crear,Se creo un estudiante,2022-10-19
+oct 20, 2022 12:00:26 AM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción ingresar,Se ingreso a estudiantes,2022-10-20
+oct 20, 2022 12:00:29 AM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción ingresar,Se ingreso a programas,2022-10-20
+oct 20, 2022 12:00:45 AM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción ingresar,Se ingreso a programas,2022-10-20
+oct 20, 2022 12:04:59 AM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción ingresar,Se ingreso a programas,2022-10-20
+oct 20, 2022 12:05:08 AM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción crear,Se creo un programa,2022-10-20
+oct 20, 2022 12:09:42 AM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción ingresar,Se ingreso a programas,2022-10-20
+oct 20, 2022 12:09:47 AM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción crear,Se creo un programa,2022-10-20
+oct 20, 2022 12:13:07 AM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción ingresar,Se ingreso a programas,2022-10-20
+oct 20, 2022 12:13:53 AM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción ingresar,Se ingreso a programas,2022-10-20
+oct 20, 2022 12:14:30 AM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción ingresar,Se ingreso a programas,2022-10-20
+oct 20, 2022 12:14:32 AM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción ingresar,Se ingreso a estudiantes,2022-10-20
+oct 20, 2022 12:19:18 AM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción ingresar,Se ingreso a estudiantes,2022-10-20
+oct 20, 2022 12:19:22 AM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción ingresar,Se ingreso a programas,2022-10-20
+oct 20, 2022 12:20:38 AM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción ingresar,Se ingreso a programas,2022-10-20
+oct 20, 2022 12:22:37 AM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción ingresar,Se ingreso a programas,2022-10-20
+oct 20, 2022 12:23:26 AM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción ingresar,Se ingreso a programas,2022-10-20
+oct 20, 2022 12:25:52 AM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción ingresar,Se ingreso a programas,2022-10-20
+oct 20, 2022 12:26:42 AM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción ingresar,Se ingreso a programas,2022-10-20
+oct 20, 2022 12:26:51 AM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción crear,Se creo un programa,2022-10-20
+oct 20, 2022 12:49:10 PM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción ingresar,Se ingreso a estudiantes,2022-10-20
+oct 20, 2022 12:49:30 PM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción crear,Se creo un estudiante,2022-10-20
+oct 20, 2022 12:50:31 PM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción ingresar,Se ingreso a estudiantes,2022-10-20
+oct 20, 2022 12:50:50 PM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción crear,Se creo un estudiante,2022-10-20
+oct 20, 2022 12:53:27 PM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción ingresar,Se ingreso a estudiantes,2022-10-20
+oct 20, 2022 12:53:43 PM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción crear,Se creo un estudiante,2022-10-20
+oct 20, 2022 12:59:06 PM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción ingresar,Se ingreso a estudiantes,2022-10-20
+oct 20, 2022 12:59:20 PM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción crear,Se creo un estudiante,2022-10-20
+oct 20, 2022 1:01:05 PM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción ingresar,Se ingreso a estudiantes,2022-10-20
+oct 20, 2022 1:01:37 PM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción crear,Se creo un estudiante,2022-10-20
+oct 20, 2022 1:02:21 PM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción ingresar,Se ingreso a estudiantes,2022-10-20
+oct 20, 2022 1:02:33 PM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción crear,Se creo un estudiante,2022-10-20
+oct 20, 2022 1:03:01 PM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción ingresar,Se ingreso a estudiantes,2022-10-20
+oct 20, 2022 1:03:19 PM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción crear,Se creo un estudiante,2022-10-20
+oct 20, 2022 1:04:02 PM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción ingresar,Se ingreso a estudiantes,2022-10-20
+oct 20, 2022 1:04:13 PM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción crear,Se creo un estudiante,2022-10-20
+oct 20, 2022 1:04:38 PM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción ingresar,Se ingreso a estudiantes,2022-10-20
+oct 20, 2022 1:04:48 PM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción crear,Se creo un estudiante,2022-10-20
+oct 20, 2022 1:06:54 PM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción ingresar,Se ingreso a estudiantes,2022-10-20
+oct 20, 2022 1:07:08 PM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción crear,Se creo un estudiante,2022-10-20
+oct 20, 2022 1:07:47 PM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción ingresar,Se ingreso a estudiantes,2022-10-20
+oct 20, 2022 1:07:58 PM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción crear,Se creo un estudiante,2022-10-20
+oct 20, 2022 1:09:56 PM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción ingresar,Se ingreso a estudiantes,2022-10-20
+oct 20, 2022 1:10:21 PM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción crear,Se creo un estudiante,2022-10-20
+oct 20, 2022 1:10:44 PM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción ingresar,Se ingreso a estudiantes,2022-10-20
+oct 20, 2022 1:11:47 PM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción ingresar,Se ingreso a estudiantes,2022-10-20
+oct 20, 2022 1:12:02 PM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción crear,Se creo un estudiante,2022-10-20
+oct 20, 2022 1:18:19 PM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción ingresar,Se ingreso a estudiantes,2022-10-20
+oct 20, 2022 1:18:31 PM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción crear,Se creo un estudiante,2022-10-20
+oct 20, 2022 1:19:01 PM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción ingresar,Se ingreso a estudiantes,2022-10-20
+oct 20, 2022 1:19:15 PM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción crear,Se creo un estudiante,2022-10-20
+oct 20, 2022 1:23:41 PM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción ingresar,Se ingreso a estudiantes,2022-10-20
+oct 20, 2022 1:23:48 PM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción ingresar,Se ingreso a programas,2022-10-20
+oct 20, 2022 1:37:15 PM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción ingresar,Se ingreso a estudiantes,2022-10-20
+oct 20, 2022 1:37:27 PM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción crear,Se creo un estudiante,2022-10-20
+oct 20, 2022 1:37:49 PM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción ingresar,Se ingreso a estudiantes,2022-10-20
+oct 20, 2022 1:38:00 PM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción crear,Se creo un estudiante,2022-10-20
+oct 20, 2022 1:38:12 PM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción crear,Se creo un estudiante,2022-10-20
+oct 20, 2022 1:39:09 PM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción ingresar,Se ingreso a estudiantes,2022-10-20
+oct 20, 2022 1:39:29 PM co.uniquindio.programacion3.preparcial1.persistence.ArchivoUtil guardarRegistroLog
+INFORMACIÓN: Acción crear,Se creo un estudiante,2022-10-20

@@ -214,26 +214,26 @@ public class Persistencia {
 
 	// ---------------------------------------------------------------------
 
-	public static String obtenerNombreProperties() {
-
-		String aux = "";
-
-		Properties properties = new Properties();
-
-		try {
-			properties.load(new FileInputStream(new File(RUTA_PROPERTIES)));
-
-			properties.setProperty("modalidad", "distancia-presencial");
-
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		return properties.getProperty("modalidad");
-	}
+//	public static String obtenerNombreProperties() {
+//
+//		String aux = "";
+//
+//		Properties properties = new Properties();
+//
+//		try {
+//			properties.load(new FileInputStream(new File(RUTA_PROPERTIES)));
+//
+//			properties.setProperty("modalidad", "distancia-presencial");
+//
+//		} catch (FileNotFoundException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//
+//		return properties.getProperty("modalidad");
+//	}
 
 }

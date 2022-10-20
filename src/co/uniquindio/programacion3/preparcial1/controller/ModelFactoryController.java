@@ -35,8 +35,8 @@ public class ModelFactoryController {
 		iniciarSalvarDatosPrueba();
 		cargarDatosDesdeArchivos();
 
-//		guardarResourceBinario();
-//		cargarResourceBinario();
+		// guardarResourceBinario();
+		// cargarResourceBinario();
 
 		guardarResourceXML();
 		cargarResourceXML();
@@ -108,32 +108,33 @@ public class ModelFactoryController {
 
 		universidad = new Universidad();
 
-		// Estudiante estudiante = new Estudiante();
-		// estudiante.setNombre("Juan");
-		// estudiante.setCodigo("12345");
-		// estudiante.setNota1(2.0);
-		// estudiante.setNota2(5.0);
-		// estudiante.setNota3(4.5);
-		// universidad.getListaEstudiantes().add(estudiante);
-		// getListaEstudiantes().add(estudiante);
+		Estudiante estudiante = new Estudiante();
+		estudiante.setNombre("Juan");
+		estudiante.setCodigo("12345");
+		estudiante.setNota1(2.0);
+		estudiante.setNota2(5.0);
+		estudiante.setNota3(4.5);
 
-		// estudiante = new Estudiante();
-		// estudiante.setNombre("Sara");
-		// estudiante.setCodigo("6789");
-		// estudiante.setNota1(3.0);
-		// estudiante.setNota2(4.0);
-		// estudiante.setNota3(2.5);
-		//
-		// // universidad.getListaEstudiantes().add(estudiante);
-		// getListaEstudiantes().add(estudiante);
-		//
-		// Programas programa = new Programas();
-		// programa.setNombre("Ana");
-		// programa.setModalidad("Presencial");
-		// programa.setCodigo("12345");
-		//
-		// universidad.getListaProgramas().add(programa);
-		// // getListaProgramas().add(programa);
+		universidad.getListaEstudiantes().add(estudiante);
+		getListaEstudiantes().add(estudiante);
+
+		estudiante = new Estudiante();
+		estudiante.setNombre("Sara");
+		estudiante.setCodigo("6789");
+		estudiante.setNota1(3.0);
+		estudiante.setNota2(4.0);
+		estudiante.setNota3(2.5);
+
+		universidad.getListaEstudiantes().add(estudiante);
+		getListaEstudiantes().add(estudiante);
+
+		Programas programa = new Programas();
+		programa.setNombre("Ana");
+		programa.setModalidad("Presencial");
+		programa.setCodigo("12345");
+
+		universidad.getListaProgramas().add(programa);
+		getListaProgramas().add(programa);
 
 		System.out.println("Universidad inicializada" + universidad);
 

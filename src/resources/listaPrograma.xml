@@ -1,4 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <java version="1.8.0_111" class="java.beans.XMLDecoder">
- <object class="co.uniquindio.programacion3.preparcial1.modell.Universidad"/>
+ <object class="co.uniquindio.programacion3.preparcial1.modell.Universidad" id="Universidad0">
+  <void property="listaEstudiantes">
+   <void method="add">
+    <object class="co.uniquindio.programacion3.preparcial1.modell.Estudiante">
+     <void property="codigo">
+      <string>12345</string>
+     </void>
+     <void property="nombre">
+      <string>Juan</string>
+     </void>
+     <void property="nota1">
+      <double>2.0</double>
+     </void>
+     <void property="nota2">
+      <double>5.0</double>
+     </void>
+     <void property="nota3">
+      <double>4.5</double>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="co.uniquindio.programacion3.preparcial1.modell.Estudiante">
+     <void property="codigo">
+      <string>6789</string>
+     </void>
+     <void property="nombre">
+      <string>Sara</string>
+     </void>
+     <void property="nota1">
+      <double>3.0</double>
+     </void>
+     <void property="nota2">
+      <double>4.0</double>
+     </void>
+     <void property="nota3">
+      <double>2.5</double>
+     </void>
+    </object>
+   </void>
+  </void>
+  <void property="listaProgramas">
+   <void method="add">
+    <object class="co.uniquindio.programacion3.preparcial1.modell.Programas">
+     <void property="codigo">
+      <string>12345</string>
+     </void>
+     <void property="modalidad">
+      <string>Presencial</string>
+     </void>
+     <void property="nombre">
+      <string>Ana</string>
+     </void>
+    </object>
+   </void>
+  </void>
+ </object>
 </java>
