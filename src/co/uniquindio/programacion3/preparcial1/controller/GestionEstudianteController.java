@@ -1,10 +1,15 @@
 package co.uniquindio.programacion3.preparcial1.controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javax.swing.JOptionPane;
+
 import co.uniquindio.programacion3.preparcial1.application.Aplicacion;
 import co.uniquindio.programacion3.preparcial1.modell.Estudiante;
+import co.uniquindio.programacion3.preparcial1.modell.Universidad;
+import co.uniquindio.programacion3.preparcial1.persistence.Persistencia;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -20,7 +25,10 @@ import javafx.scene.control.cell.PropertyValueFactory;
 public class GestionEstudianteController {
 
 	private Aplicacion aplicacion;
-	private ModelFactoryController modelFactoryController;
+
+	// private ModelFactoryController modelFactoryController;
+
+	ModelFactoryController modelFactoryController = ModelFactoryController.getInstance();
 
 	@FXML
 	private ResourceBundle resources;
@@ -57,6 +65,9 @@ public class GestionEstudianteController {
 
 	@FXML
 	private Button btnAgregar;
+
+	@FXML
+	private Button btnAtras;
 
 	@FXML
 	private TextField txtNota3;
@@ -111,23 +122,22 @@ public class GestionEstudianteController {
 		if (estudianteSeleccion != null) {
 
 			if (datosValidos(nombre, codigo, nota1, nota2, nota3)) {
-				// aplicacion.actualizarEstudiante(nombre, codigo, notas);
 
 				estudianteSeleccion.setNombre(nombre);
 				estudianteSeleccion.setCodigo(codigo);
-				// estudianteSeleccion.setNotas(notas);
-
-				double notasAux = notasADouble(nota1, nota2, nota3);
+				estudianteSeleccion.setNota1(Double.parseDouble(nota1));
+				estudianteSeleccion.setNota2(Double.parseDouble(nota2));
+				estudianteSeleccion.setNota3(Double.parseDouble(nota3));
 
 				tableviewEstudiantes.refresh();
+
 				mostrarMensaje("Información", "Actualizar", "El estudiante ha sido actualizado.",
 						AlertType.CONFIRMATION);
 
 			}
 
 		} else {
-			mostrarMensaje("Advertencia", "Actualizar", "No se ha realizado la selección de un estudiante.",
-					AlertType.WARNING);
+			mostrarMensaje("Advertencia", "Actualizar", "No se ha seleccionado un estudiante.", AlertType.WARNING);
 
 		}
 
@@ -142,29 +152,35 @@ public class GestionEstudianteController {
 		String nombre = txtNombre.getText();
 		String codigo = txtCodigo.getText();
 		String nota1 = this.txtNota1.getText();
-
 		String nota2 = this.txtNota2.getText();
 		String nota3 = this.txtNota3.getText();
 
 		try {
 			if (datosValidos(nombre, codigo, nota1, nota2, nota3)) {
 				crearEstudiante(nombre, codigo, nota1, nota2, nota3);
+
+				modelFactoryController.agregarEstudiante(nombre, codigo, Double.parseDouble(nota1),
+						Double.parseDouble(nota2), Double.parseDouble(nota3));
 				actualizarTabla();
+
 			}
 		} catch (Exception ignored) {
 
 		}
+
 	}
 
 	private double notasADouble(String nota1, String nota2, String nota3) {
+
 		double notasAux = 0;
+
 		try {
 			notasAux = Double.parseDouble(nota1);
 			notasAux = Double.parseDouble(nota2);
 			notasAux = Double.parseDouble(nota3);
 
 		} catch (Exception e) {
-			mostrarMensaje("Advertencia", "Información del empleado es invalida",
+			mostrarMensaje("Advertencia", "Información del estudiante es invalida",
 					"Ingrese un valor numerico en el campo de notas", AlertType.WARNING);
 		}
 		return notasAux;
@@ -174,22 +190,24 @@ public class GestionEstudianteController {
 	/*
 	 * Metodo para crear un estudiante
 	 */
-	private void crearEstudiante(String nombre, String codigo, String nota1, String nota2, String nota3) {
+	private void crearEstudiante(String nombre, String codigo, String nota1, String nota2, String nota3)
+			throws IOException {
 
 		double notasAux = notasADouble(nota1, nota2, nota3);
 		Estudiante estudiante = aplicacion.crearEstudiante(nombre, codigo, notasAux, notasAux, notasAux);
 
 		// Notificar que el estudiante fue creado
-
 		if (estudiante != null) {
 			listadoEstudiantes.add(0, estudiante);
 			listadoEstudiantes.add(estudiante);
 			mostrarMensaje("Notificación estudiante", "Estudiante guardado",
 					"El estudiante " + estudiante.getNombre() + " ha sido guardado", AlertType.INFORMATION);
 
+			Persistencia.guardarRegistroLog("Se creo un estudiante", 1, "Acción crear");
+
 		} else {
 
-			mostrarMensaje("Notificaciï¿½n Estudiante", "Estudiante no guardado",
+			mostrarMensaje("Notificación Estudiante", "Estudiante no guardado",
 					"El estudiante " + nombre + " no ha sido guardado", AlertType.WARNING);
 
 		}
@@ -215,17 +233,35 @@ public class GestionEstudianteController {
 	}
 
 	/*
-	 * Este metodo permite buscar un estudiante
+	 * Este metodo permite buscar un estudiante por su codigo
 	 */
 	@FXML
 	void buscarEstudiante(ActionEvent event) {
 
+		String buscarCodigo = this.txtBuscarEstudiante.getText();
+
+		if (buscarCodigo.isEmpty()) {
+
+			this.tableviewEstudiantes.setItems(listadoEstudiantes);
+
+		} else {
+			this.listaBuscarEstudiante.clear();
+			for (Estudiante estudiante : this.listadoEstudiantes) {
+				if (estudiante.getCodigo().contains(buscarCodigo)) {
+					this.listaBuscarEstudiante.add(estudiante);
+
+				}
+
+			}
+			this.tableviewEstudiantes.setItems(listaBuscarEstudiante);
+		}
+
 	}
 
 	/*
-	 * Metodo que permite verificar si todos los campos han sido dilingeciados
+	 * Metodo que permite verificar si todos los campos de texto han sido
+	 * dilingeciados
 	 */
-
 	private boolean datosValidos(String nombre, String codigo, String nota1, String nota2, String nota3) {
 
 		boolean flag = true;
@@ -282,10 +318,13 @@ public class GestionEstudianteController {
 
 		}
 
-		mostrarMensaje("Advertencia", "Información del empleado invalida", notificacion, AlertType.WARNING);
+		mostrarMensaje("Advertencia", "Información del estudiante invalida", notificacion, AlertType.WARNING);
 		return false;
 	}
 
+	/*
+	 * Metodo para eliminar un estudiante
+	 */
 	@FXML
 	void eliminarEstudiante(ActionEvent event) {
 
@@ -296,9 +335,8 @@ public class GestionEstudianteController {
 
 			} else {
 
-				mostrarMensaje("Información", "Estudiante selecciï¿½n",
-						"No se ha realizado la selecciï¿½n de un estudiante", AlertType.INFORMATION);
-
+				mostrarMensaje("Información", "Estudiante selección", "No se ha seleccionado un estudiante",
+						AlertType.INFORMATION);
 			}
 
 			listadoEstudiantes.remove(estudianteSeleccion);
@@ -312,9 +350,20 @@ public class GestionEstudianteController {
 
 	}
 
+	/*
+	 * Metodo para regresar a la ventana principal
+	 */
+	@FXML
+	public void mostrarVentanaPrincipal(ActionEvent event) {
+
+		aplicacion.mostrarVentanaPrincipal();
+
+	}
+
 	// ---------------------TABLA-------------------------
 
 	ObservableList<Estudiante> listadoEstudiantes = FXCollections.observableArrayList();
+	ObservableList<Estudiante> listaBuscarEstudiante = FXCollections.observableArrayList();
 
 	private Estudiante estudianteSeleccion;
 
@@ -328,6 +377,8 @@ public class GestionEstudianteController {
 			txtNota2.setText(estudianteSeleccion.getNota2() + "");
 			txtNota3.setText(estudianteSeleccion.getNota3() + "");
 
+			txtCodigo.setDisable(true);
+
 		}
 
 	}
@@ -336,16 +387,10 @@ public class GestionEstudianteController {
 
 		tableviewEstudiantes.getItems().clear();
 		listadoEstudiantes.clear();
-
 		listadoEstudiantes.addAll(modelFactoryController.getListaEstudiante());
 		tableviewEstudiantes.getItems().addAll(listadoEstudiantes);
 		tableviewEstudiantes.refresh();
 	}
-
-	// @FXML
-	// void 96da38(ActionEvent event) {
-	//
-	// }
 
 	@FXML
 	void initialize() {

@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="421.0" prefWidth="699.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.uniquindio.programacion3.preparcial1.controller.GestionEstudianteController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="376.0" prefWidth="699.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.uniquindio.programacion3.preparcial1.controller.GestionEstudianteController">
    <children>
       <TableView fx:id="tableviewEstudiantes" layoutX="326.0" layoutY="121.0" prefHeight="203.0" prefWidth="367.0" style="-fx-border-color: #79F67E;">
         <columns>
@@ -55,8 +55,8 @@
       </Label>
       <TextField fx:id="txtNota2" layoutX="30.0" layoutY="258.0" prefHeight="25.0" prefWidth="234.0" promptText="Nota 2" style="-fx-border-color: #79F67E;" />
       <TextField fx:id="txtNota3" layoutX="30.0" layoutY="294.0" prefHeight="25.0" prefWidth="234.0" promptText="Nota 3" style="-fx-border-color: #79F67E;" />
-      <TextField fx:id="txtBuscarEstudiante" layoutX="30.0" layoutY="375.0" prefHeight="25.0" prefWidth="234.0" promptText="Buscar estudiante por su codigo" style="-fx-border-color: #79F67E;" />
-      <Button fx:id="btnBuscar" layoutX="283.0" layoutY="376.0" mnemonicParsing="false" onAction="#buscarEstudiante" style="-fx-background-color: #FCC57C;" text="Buscar">
+      <TextField fx:id="txtBuscarEstudiante" layoutX="30.0" layoutY="334.0" prefHeight="25.0" prefWidth="234.0" promptText="Buscar estudiante por su codigo" style="-fx-border-color: #79F67E;" />
+      <Button fx:id="btnBuscar" layoutX="283.0" layoutY="335.0" mnemonicParsing="false" onAction="#buscarEstudiante" style="-fx-background-color: #FCC57C;" text="Buscar">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -66,15 +66,15 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <ImageView fitHeight="117.0" fitWidth="175.0" layoutX="593.0" layoutY="363.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="117.0" fitWidth="175.0" layoutX="599.0" layoutY="-15.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/rayas.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="117.0" fitWidth="175.0" layoutX="-20.0" layoutY="-17.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/rayas.png" />
-         </image>
-      </ImageView>
+      <Button fx:id="btnAtras" layoutX="-9.0" layoutY="13.0" mnemonicParsing="false" onAction="#mostrarVentanaPrincipal" prefHeight="30.0" prefWidth="38.0" style="-fx-background-color: #8EFF33;" text="◀" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

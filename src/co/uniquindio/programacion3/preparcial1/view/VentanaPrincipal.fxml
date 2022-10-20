@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="306.0" prefWidth="555.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.uniquindio.programacion3.preparcial1.controller.GestionVentanaPrincipal">
+   <children>
+      <Label layoutX="153.0" layoutY="84.0" text="Por favor elija una opción:">
+         <font>
+            <Font name="System Italic" size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="93.0" layoutY="16.0" text="Gestion uniquindio" textFill="#96da38">
+         <font>
+            <Font name="System Bold Italic" size="44.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnEstudiantes" layoutX="107.0" layoutY="172.0" mnemonicParsing="false" onAction="#irEstudiantes" style="-fx-background-color: #C3FF87;" text="Estudiantes">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="117.0" fitWidth="175.0" layoutX="455.0" layoutY="223.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/rayas.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="117.0" fitWidth="175.0" layoutX="-20.0" layoutY="-17.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/rayas.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnProgramas" layoutX="321.0" layoutY="172.0" mnemonicParsing="false" onAction="#irProgramas" style="-fx-background-color: #C3FF87;" text="Programas">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

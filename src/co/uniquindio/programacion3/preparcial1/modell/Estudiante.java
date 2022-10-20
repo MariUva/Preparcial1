@@ -2,6 +2,7 @@ package co.uniquindio.programacion3.preparcial1.modell;
 
 public class Estudiante {
 
+	//Atributos de la clase
 	private String nombre;
 	private String codigo;
 	private double nota1;
